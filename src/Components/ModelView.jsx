@@ -14,7 +14,7 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, item, size, setRotat
   const [currentSize, setCurrentSize] = useState(size);
 
   // Scale values for small and large models
-  const scaleValue = size === "small" ? [10, 10, 10] : [17, 17, 17];
+  const scaleValue = size === "small" ? [15, 15, 15] : [17, 17, 17];
 
   // ✅ Debugging: Log size changes
   useEffect(() => {
