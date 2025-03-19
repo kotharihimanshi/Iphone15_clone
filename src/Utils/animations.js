@@ -15,27 +15,17 @@ export const animatewithGsap = (target , animationProps , scrollProps) => {
 }
 
 export const animatewithGsapTl = (timeline, rotationRef, firstTarget, secondTarget, rotationState, animationProps) => {
+    if (!rotationRef.current) return; // Prevent errors if ref is not ready
+
     timeline.to(rotationRef.current.rotation, {
         y: rotationState,
         duration: 1,
-        ease: 'power2.inOut'
+        ease: "power2.inOut"
     });
 
-    timeline.to(
-        firstTarget,
-        {
-            ...animationProps,
-            ease: 'power2.inOut'
-        },
-        '<'
-    );
-
-    timeline.to(
-        secondTarget,
-        {
-            ...animationProps,
-            ease: 'power2.inOut'
-        },
-        '<'
-    );
+    // timeline.to(firstTarget, { ...animationProps, ease: "power2.inOut" }, ">");
+    // timeline.to(secondTarget, { ...animationProps, ease: "power2.inOut" }, ">");
 };
+
+
+
